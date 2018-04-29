@@ -3,26 +3,7 @@ Author: W3layouts
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
---><?php
-if(isset($POST['submit'])){
-	$connection = mysqli_connect('127.0.0.1','root','','bookexpressbus');
-
-	if(mysqli_connect_errno()){
-		die("Somethig Ent wrong");
-	}else{
-		echo 'successfully connected';
-	}
-
-	$name=$_POST['name'];
-	$feedback=$_POST['feedback'];
- 
- //echo $name." ".$feedback;
-	$query="INSERT INTO feedback (name,feedback) VALUES('{$name}','{$feedback}') ";
-
-	$result = mysqli_query($connection,$query);
-
-	}	
-?>
+-->
 
 <!DOCTYPE HTML>
 <html>
