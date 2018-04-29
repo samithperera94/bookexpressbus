@@ -4,8 +4,6 @@ $connection = mysqli_connect('127.0.0.1','root','','bookexpressbus');
 
 if(mysqli_connect_errno()){
 	die("Somethig Ent wrong");
-}else{
-	echo 'successfully connected';
 }
 
 $name=$_POST['name'];
