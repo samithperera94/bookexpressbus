@@ -13,18 +13,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="keywords" content="Green Wheels Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-<link href="css/font-awesome.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="<?php echo base_url()?>assets/css/style.css" rel='stylesheet' type='text/css' />
+<link href='<?php echo base_url()?>assets//fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+<link href='<?php echo base_url()?>assets//fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+<link href='<?php echo base_url()?>assets//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href="<?php echo base_url()?>assetscss/font-awesome.css" rel="stylesheet">
 <!-- Custom Theme files -->
-<script src="js/jquery-1.12.0.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="<?php echo base_url()?>assetsjs/jquery-1.12.0.min.js"></script>
+<script src="<?php echo base_url()?>assetsjs/bootstrap.min.js"></script>
 <!--animate-->
-<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
-<script src="js/wow.min.js"></script>
+<link href="<?php echo base_url()?>assetscss/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="<?php echo base_url()?>assetsjs/wow.min.js"></script>
 	<script>
 		 new WOW().init();
 	</script>
@@ -55,8 +55,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<a href="index.html">SL <span>Wheels</span></a>	
 		</div>
 		<div class="bus wow fadeInUp animated" data-wow-delay=".5s">
-            <a href="index.html" class="buses active">BUSES</a>
-            <a href="hotels.html">HOTELS</a>
+            <a href="#" class="buses active">BUSES</a>
+            <a href="#">HOTELS</a>
         </div>
 		<div class="lock fadeInDown animated" data-wow-delay=".5s"> 
 			<li><i class="fa fa-lock"></i></li>
@@ -107,51 +107,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div> -->
 <!--- /footer-btm -->
 <!--- banner -->
-<div class="banner">
+<!-- <div class="banner">
 	<div class="container">
 		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;"> Bus Booking Made Easy and Efficient in Sri Lanka</h1>
 	</div>
 </div>
-
+ -->
 <div class="container">
 	<div class="col-md-5 bann-info1 wow fadeInLeft animated" data-wow-delay=".5s">
 		<i class="fa fa-columns"></i>
-		<h3>SRI LANKA'S MOST TRAVEL BRAND</h3>
+		<h4>We Warmly Welcome you experiences On bookexpreebus. Anything you wish to share our helps to reserve your seat is help hul or you get dispoint on us everything accepted. </h4>
 	</div>
 	<div class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s">
-		<h2>The simplest way to book your bus tickets in Sri Lanka</h2>
+		<h2>Share your experience to improve us</h2>
+		<!-- <form action="#"> -->
+		<!-- <div><input type="text-area" name="comments"></div> -->
+
 		<div class="ban-top">
-			<div class="bnr-left">
-				<label class="inputLabel">From</label>
-				<input class="city" type="text" value="Enter a city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required=>
-			</div>
-			<div class="bnr-left">
-				<label class="inputLabel">To</label>
-				<input class="city" type="text" value="Enter a city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required=>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="ban-bottom">
-			<div class="bnr-right">
-				<label class="inputLabel">Date of Journey</label>
-				<input class="date" id="datepicker" type="text" value="dd-mm-yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'dd-mm-yyyy';}" required=>
-			</div>
-			
-				<div class="clearfix"></div>
-				<!---start-date-piker---->
-				<link rel="stylesheet" href="css/jquery-ui.css" />
-				<script src="js/jquery-ui.js"></script>
-					<script>
-						$(function() {
-						$( "#datepicker,#datepicker1" ).datepicker();
-						});
-					</script>
-			<!---/End-date-piker---->
-		</div>
-		<div class="sear">
-			<form action="bus.html">
-				<button class="seabtn">Search Buses</button>
+			<form action="#">
+				<input type="text-area" name="comments">
+				<button class="seabtn">Submit</button>
+				<button class="seabtn">complaign </button>
 			</form>
+
+
 		</div>
 	</div>
 	<div class="clearfix"></div>
