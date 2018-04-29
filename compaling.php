@@ -126,11 +126,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="ban-top">
 			<div class="bnr-left">
 				<label class="inputLabel">Name</label>
-				<input name="name" class="city" type="text" value="Enter Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required=>
+				<input name="name" class="city" type="text" placeholder="Enter Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required=>
 			</div>
 			<div class="bnr-left">
 				<label class="inputLabel">Experience you got</label>
-				<input name="feedback" class="city" type="text" value="You Experience" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required=>
+				<input name="feedback" class="city" type="text" placeholder="You Experience" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required=>
 			</div>
 				<div class="clearfix"></div>
 		</div>
