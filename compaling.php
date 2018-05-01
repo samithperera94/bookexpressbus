@@ -155,86 +155,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 				<button class="seabtn" value="">Submit</button>
 				<!-- <input type="submit" value="submit" name="submit"> -->
+				<button class="seabtn" data-target="#myModal3" data-toggle="modal">Complaign</button>
 		</div>
 		</form>
+
 	</div>
 	<div class="clearfix"></div>
 	
 </div>
-<!--- /banner ---->
-<!--- rupes ---->
-<!-- <div class="container">
-	<div class="rupes">
-		<div class="col-md-4 rupes-left wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
-			<div class="rup-left">
-				<a href="offers.html"><i class="fa fa-usd"></i></a>
-			</div>
-			<div class="rup-rgt">
-				<h3>UP TO USD. 50 OFF</h3>
-				<h4><a href="offers.html">TRAVEL SMART</a></h4>
-				<p>CODE:YBMAR12<br>Book Using Pay Money</p>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="col-md-4 rupes-left wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
-			<div class="rup-left">
-				<a href="offers.html"><i class="fa fa-h-square"></i></a>
-			</div>
-			<div class="rup-rgt">
-				<h3>UP TO 70% OFF</h3>
-				<h4><a href="offers.html">ON HOTELS ACROSS WORLD</a></h4>
-				<p>Offer CODE:YBMAR12</p>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="col-md-4 rupes-left wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
-			<div class="rup-left">
-				<a href="offers.html"><i class="fa fa-mobile"></i></a>
-			</div>
-			<div class="rup-rgt">
-				<h3>FLAT USD. 50 OFF</h3>
-				<h4><a href="offers.html">BUS APP OFFER</a></h4>
-				<p>book via the yellow Bus App<br>CODE:YBMAR12</p>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div> -->
-<!--- /rupes ---->
-<!---holiday---->
-<!-- <div class="container">
-	<div class="holiday">
-		<div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-			<img src="images/4.jpg" class="img-responsive" alt="">
-		</div>
-		<div class="col-md-6 holiday-mid animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-		<h3>Travel Holiday Packages</h3>
-		<p>Private Guide and Driver in any language and in any departure date. For more information please contact us....</p>
-		</div>
-		<div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-			<img src="images/5.jpg" class="img-responsive" alt="">
-		</div>
-			<div class="clearfix"></div>
-	</div>
-</div> -->
-<!---/holiday---->
-<!---track---->
-<!-- <div class="container">
-	<div class="track">
-		<div class="col-md-6 track-right wow fadeInLeft animated" data-wow-delay=".5s">
-			<a href="track.html"><img src="images/map1.png" class="img-responsive" alt=""></a>
-		</div>
-		<div class="col-md-6 track-left wow fadeInRight animated" data-wow-delay=".5s">
-			<h3>TRACK MY BUS</h3>
-			<p>First of its own kind,bus tracking feature on bus</p>
-			<a href="track.html" class="learn">Learn More</a>
-		</div>
-			<div class="clearfix"></div>
-	</div>
-</div> -->
-<!--- /track ---->
-<!--- routes ---->
+
 <div class="routes">
 	<div class="container">
 		<div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
@@ -415,6 +344,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 <!-- //signin -->
 <!-- write us -->
+
 			<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
@@ -422,53 +352,48 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
 						</div>
 							<section>
+								<form action="cmp.php" method="post">
 								<div class="modal-body modal-spa">
 									<div class="writ">
 										<h4>HOW CAN WE HELP YOU</h4>
 											<ul>
 												<li class="na-me">
-													<input class="name" type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+													<input class="name" type="text" name="name" placeholder="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required=>
 												</li>
 												<li class="na-me">
-													<input class="Email" type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+													<input class="Email" type="text" name="email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required=>
 												</li>
 												<li class="na-me">
-													<input class="number" type="text" value="Mobile Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile Number';}" required="">
+													<input class="number" type="text" name="number" placeholder="Mobile Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile Number';}" required=>
 												</li>
 												<li class="na-me">
-													<select id="country" onchange="change_country(this.value)" class="frm-field required sect">
-														<option value="null">Select Issue</option> 		
-														<option value="null">Booking Issues</option>
-														<option value="null">Bus Cancellation</option>
-														<option value="null">Refund</option>
-														<option value="null">Wallet</option>														
+													<select id="country" name="issue" placeholder="Select Issue" onchange="change_country(this.value)" class="frm-field required sect" required=>
+														<option value="Select Issue">Select Issue</option> 		
+														<option value="Booking Issues">Booking Issues</option>
+														<option value="Bus Cancellation">Bus Cancellation</option>
+														<option value="Refund">Refund</option>
+														<option value="Wallet">Wallet</option>														
 													</select>
 												</li>
-												<li class="na-me">
-													<select id="country" onchange="change_country(this.value)" class="frm-field required sect">
-														<option value="null">Select Issue</option> 		
-														<option value="null">Booking Issues</option>
-														<option value="null">Bus Cancellation</option>
-														<option value="null">Refund</option>
-														<option value="null">Wallet</option>														
-													</select>
-												</li>
+
 												<li class="descrip">
-													<input class="special" type="text" value="Write Description" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Write Description';}" required="">
+													<input class="special" name="descript" type="text" value="Write Description" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Write Description';}" required="">
 												</li>
 													<div class="clearfix"></div>
 											</ul>
 											<div class="sub-bn">
-												<form>
+												
 													<button class="subbtn">Submit</button>
-												</form>
+												
 											</div>
 									</div>
 								</div>
+							</form>
 							</section>
 					</div>
 				</div>
 			</div>
+
 <!-- //write us -->
 </body>
 </html>
