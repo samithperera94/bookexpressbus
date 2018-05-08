@@ -4,10 +4,17 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php
+    require ('dbcon.php');
+    session_start();
+    $_SESSION['date']=$_POST['dateselect'];
+?>
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Green Wheels a Travel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>BookExpressBus</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Green Wheels Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -35,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="top-header">
 	<div class="container">
 		<ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">
-			<li class="hm"><a href="index.html"><i class="fa fa-home"></i></a></li>
+			<li class="hm"><a href="index.php"><i class="fa fa-home"></i></a></li>
 			<li class="prnt"><a href="javascript:window.print()">Print/SMS Ticket</a></li>
 				
 		</ul>
@@ -47,16 +54,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="clearfix"></div>
 	</div>
 </div>
-<!--- /top-header -->
-<!--- header -->
+<!--- /top-header ---->
+<!--- header ---->
 <div class="header">
 	<div class="container">
 		<div class="logo wow fadeInDown animated" data-wow-delay=".5s">
-			<a href="index.html">SL <span>Wheels</span></a>	
+			<a href="index.php">BookExpressBus <span></span></a>
 		</div>
 		<div class="bus wow fadeInUp animated" data-wow-delay=".5s">
-            <a href="index.html" class="buses active">BUSES</a>
-            <a href="hotels.html">HOTELS</a>
+<!--            <a href="index.html" class="buses active">BUSES</a>-->
+<!--            <a href="hotels.html">HOTELS</a>-->
         </div>
 		<div class="lock fadeInDown animated" data-wow-delay=".5s"> 
 			<li><i class="fa fa-lock"></i></li>
@@ -66,13 +73,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="clearfix"></div>
 	</div>
 </div>
-<!--- /header -->
-<!--- footer-btm -->
-<!-- <div class="footer-btm wow fadeInLeft animated" data-wow-delay=".5s">
+<!--- /header ---->
+<!--- footer-btm ---->
+<div class="footer-btm wow fadeInLeft animated" data-wow-delay=".5s">
 	<div class="container">
 	<div class="navigation">
 			<nav class="navbar navbar-default">
-				
+				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span>
@@ -81,233 +88,207 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="icon-bar"></span>
 				  </button>
 				</div>
-				
+				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="cl-effect-1">
 						<ul class="nav navbar-nav">
-							<li><a href="about.html">About</a></li>
-								<li><a href="faq.html">Faq</a></li>
-								<li><a href="apps.html">Apps</a></li>
-								<li><a href="blog.html">Blog</a></li>
-								<li><a href="travels.html">Travels</a></li>
-								<li><a href="privacy.html">Privacy Policy</a></li>
-								<li><a href="agent.html">Agent Registration</a></li>
-								<li><a href="terms.html">Terms of Use</a></li>
-								<li><a href="contact.html">Contact Us</a></li>
-								<li>Need Help?<a href="#" data-toggle="modal" data-target="#myModal3"> / Write Us </a>  </li>
-								<div class="clearfix"></div>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Faq</a></li>
+							<li><a href="#">Apps</a></li>
+							<!--								<li><a href="#">Blog</a></li>-->
+							<!--								<li><a href="#">Travels</a></li>-->
+							<!--								<li><a href="#">Privacy Policy</a></li>-->
+							<!--								<li><a href="#">Agent Registration</a></li>-->
+							<!--								<li><a href="#">Terms of Use</a></li>-->
+							<li><a href="#">Contact Us</a></li>
+							<!--								<li>Need Help?<a href="#" data-toggle="modal" data-target="#myModal3"> / Write Us </a>  </li>-->
+							<div class="clearfix"></div>
 						</ul>
 					</nav>
-				</div>	
+				</div><!-- /.navbar-collapse -->	
 			</nav>
 		</div>
 		
 		<div class="clearfix"></div>
 	</div>
-</div> -->
-<!--- /footer-btm -->
-<!--- banner -->
-<div class="banner">
+</div>
+<!--- /footer-btm ---->
+<!--- banner-1 ---->
+<div class="banner-1 ">
 	<div class="container">
-		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;"> Bus Booking Made Easy and Efficient in Sri Lanka</h1>
+		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;"> The Simplest Way to Book Your Bus Tickets in Sri Lanka</h1>
 	</div>
+</div>
+<!--- /banner-1 ---->
+<!--- bus-tp ---->
+<div class="bus-tp">
+	<div class="container">
+		<p>Fare starts from : Rs. 500</p>
+        <?php
+        $startCity = $_POST['startcountry'];
+        $endCity = $_POST['endcountry'];
+
+        echo '<h2>'.$startCity. ' to ' .$endCity.'</h2>';
+
+        ?>
+
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!--- /bus-tp ---->
+<!--- bus-btm ---->
+<div class="bus-btm">
+	<div class="container">
+		<ul>
+			<li class="trav"><a href="#">Travels</a></li>
+			<li class="dept"><a href="#">Depart</a></li>
+			<li class="arriv"><a href="#">Arrive</a></li>
+			<li class="seat"><a href="#">Route</a></li>
+			<li class="fare"><a href="#">Bus Fare</a></li>
+				<div class="clearfix"></div>
+		</ul>
+	</div>
+</div>
+<!--- /bus-btm ---->
+<!--- bus-midd ---->
+<div class="bus-midd wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">
+	<?php
+
+	if($_POST['startcountry'] != '' and $_POST['endcountry']!='' and $_POST['dateselect']!=''){
+		$startCity = $_POST['startcountry'];
+		$endCity = $_POST['endcountry'];
+
+
+		$query = "SELECT * FROM route WHERE departure='$startCity' and arrival='$endCity'";
+		$result = mysqli_query($conn,$query);
+		$count = mysqli_num_rows($result);
+		if($count>0){
+			while($row = mysqli_fetch_array($result)){
+			    $routeId = $row['route_id'];
+				$startRoute = $row['departure'];
+				$endRoute = $row['arrival'];
+            	$startTime = $row['start_time'];
+            	$endTime = $row['end_time'];
+            	$busFair = $row['bus_fair'];
+            	$busId = $row['bus_id'];
+				$query1 = "SELECT name FROM bus_info WHERE bus_id='$busId'";
+				$result1 = mysqli_query($conn,$query1);
+				$count1 = mysqli_num_rows($result1);
+				if($count1>0){
+					while($row1 = mysqli_fetch_array($result1)){
+		            	$name = $row1['name'];
+			        }  
+		        }
+	?>
+	<div class="container">
+	<!--- ul-first  ---->
+	
+		<ul class="first">
+			<li class="trav">
+				<div class="bus-ic">
+					<img src="images/bus.png" class="img-responsive" alt="">
+				</div>
+				<div class="bus-txt">
+					<h4><?php echo $name;?></h4>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="dept">
+				<div class="bus-ic1">
+					<i class="fa fa-clock-o"></i>
+				</div>
+				<div class="bus-txt1">
+					<h4><a href="#"><?php echo $startTime;?></a></h4>
+					<p>Duration</p>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="arriv">
+				<div class="bus-txt2">
+					<h4><a href="#"><?php echo $endTime?></a></h4>
+					<p><?php echo $endTime-$startTime?> Hrs</p>
+				</div>
+			</li>
+			<li class="seat">
+				<div class="bus-txt3">
+					<h4><?php echo $startRoute.' to '.$endRoute?> </h4>
+
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="fare">
+				<div class="bus-txt4">
+					<h5 id ><?php echo "Rs: ".$busFair?></h5>
+                    <form action="seat.php" method="POST">
+                        <button name="routeDetails" class="btn btn-success" value="<?php echo $routeId?>">VIEW SEATS</button>
+                    </form>
+				</div>
+			</li>
+				<div class="clearfix"></div>
+		</ul>
+		<!--- /ul-first  ---->
+		
+	</div>
+	<?php
+			}
+		}
+	}else{
+		?>
+
+		<div class="panel panel-heading" style="height: 100px;width:500px;  padding: 50px ;" >
+			<h5 style="color: red "><?php echo "No buses available for the given search criteria."?></h5>
+
+		</div>
+        <div class="clearfix"></div>
+
+	<?php
+	}
+	?>
 </div>
 
-<div class="container">
-	<div class="col-md-5 bann-info1 wow fadeInLeft animated" data-wow-delay=".5s">
-		<i class="fa fa-columns"></i>
-		<h3>SRI LANKA'S MOST TRAVEL BRAND</h3>
-	</div>
-	<div class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s">
-		<h2>The simplest way to book your bus tickets in Sri Lanka</h2>
-		<div class="ban-top">
-			<div class="bnr-left">
-				<label class="inputLabel">From</label>
-				<input class="city" type="text" value="Enter a city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required=>
-			</div>
-			<div class="bnr-left">
-				<label class="inputLabel">To</label>
-				<input class="city" type="text" value="Enter a city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required=>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="ban-bottom">
-			<div class="bnr-right">
-				<label class="inputLabel">Date of Journey</label>
-				<input class="date" id="datepicker" type="text" value="dd-mm-yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'dd-mm-yyyy';}" required=>
-			</div>
-			
-				<div class="clearfix"></div>
-				<!---start-date-piker---->
-				<link rel="stylesheet" href="css/jquery-ui.css" />
-				<script src="js/jquery-ui.js"></script>
-					<script>
-						$(function() {
-						$( "#datepicker,#datepicker1" ).datepicker();
-						});
-					</script>
-			<!---/End-date-piker---->
-		</div>
-		<div class="sear">
-			<form action="bus.html">
-				<button class="seabtn">Search Buses</button>
-			</form>
-		</div>
-	</div>
-	<div class="clearfix"></div>
-</div>
-<!--- /banner ---->
-<!--- rupes ---->
-<!-- <div class="container">
-	<div class="rupes">
-		<div class="col-md-4 rupes-left wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
-			<div class="rup-left">
-				<a href="offers.html"><i class="fa fa-usd"></i></a>
-			</div>
-			<div class="rup-rgt">
-				<h3>UP TO USD. 50 OFF</h3>
-				<h4><a href="offers.html">TRAVEL SMART</a></h4>
-				<p>CODE:YBMAR12<br>Book Using Pay Money</p>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="col-md-4 rupes-left wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
-			<div class="rup-left">
-				<a href="offers.html"><i class="fa fa-h-square"></i></a>
-			</div>
-			<div class="rup-rgt">
-				<h3>UP TO 70% OFF</h3>
-				<h4><a href="offers.html">ON HOTELS ACROSS WORLD</a></h4>
-				<p>Offer CODE:YBMAR12</p>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="col-md-4 rupes-left wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
-			<div class="rup-left">
-				<a href="offers.html"><i class="fa fa-mobile"></i></a>
-			</div>
-			<div class="rup-rgt">
-				<h3>FLAT USD. 50 OFF</h3>
-				<h4><a href="offers.html">BUS APP OFFER</a></h4>
-				<p>book via the yellow Bus App<br>CODE:YBMAR12</p>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div> -->
-<!--- /rupes ---->
-<!---holiday---->
-<!-- <div class="container">
-	<div class="holiday">
-		<div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-			<img src="images/4.jpg" class="img-responsive" alt="">
-		</div>
-		<div class="col-md-6 holiday-mid animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-		<h3>Travel Holiday Packages</h3>
-		<p>Private Guide and Driver in any language and in any departure date. For more information please contact us....</p>
-		</div>
-		<div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-			<img src="images/5.jpg" class="img-responsive" alt="">
-		</div>
-			<div class="clearfix"></div>
-	</div>
-</div> -->
-<!---/holiday---->
-<!---track---->
-<!-- <div class="container">
-	<div class="track">
-		<div class="col-md-6 track-right wow fadeInLeft animated" data-wow-delay=".5s">
-			<a href="track.html"><img src="images/map1.png" class="img-responsive" alt=""></a>
-		</div>
-		<div class="col-md-6 track-left wow fadeInRight animated" data-wow-delay=".5s">
-			<h3>TRACK MY BUS</h3>
-			<p>First of its own kind,bus tracking feature on bus</p>
-			<a href="track.html" class="learn">Learn More</a>
-		</div>
-			<div class="clearfix"></div>
-	</div>
-</div> -->
-<!--- /track ---->
-<!--- routes ---->
-<div class="routes">
-	<div class="container">
-		<div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
-			<div class="rou-left">
-				<a href="#"><i class="fa fa-truck"></i></a>
-			</div>
-			<div class="rou-rgt wow fadeInDown animated" data-wow-delay=".5s">
-				<h3>80000</h3>
-				<p>ROUTES</p>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="col-md-4 routes-left">
-			<div class="rou-left">
-				<a href="#"><i class="fa fa-user"></i></a>
-			</div>
-			<div class="rou-rgt">
-				<h3>1900</h3>
-				<p>BUS OPERATORS</p>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
-			<div class="rou-left">
-				<a href="#"><i class="fa fa-ticket"></i></a>
-			</div>
-			<div class="rou-rgt">
-				<h3>7,00,00,000+</h3>
-				<p>TICKETS SOLD</p>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!--- /routes ---->
+<!--- /bus-midd ---->
 <!--- footer-top ---->
 <div class="footer-top">
 	<div class="container">
 		<div class="col-md-6 footer-left wow fadeInLeft animated" data-wow-delay=".5s">
-			<h3>Bus Operators</h3>
+			<h3>Bus Routes</h3>
 				<ul>
-					<li><a href="bus.html">New York  Charter </a></li>
-					<li><a href="bus.html">Washington Charter</a></li>
-					<li><a href="bus.html">Los Angeles Charter</a></li>
-					<li><a href="bus.html">Chicago Charter</a></li>
-					<li><a href="bus.html">Orlando Charter</a></li>
-					<li><a href="bus.html">New Orleans Charter</a></li>
-					<li><a href="bus.html">Houston Charter</a></li>
-					<li><a href="bus.html">Nashville Charter</a></li>
-					<li><a href="bus.html">Charlotte Charter</a></li>
-					<li><a href="bus.html">Toronto Charter</a></li>
-					<li><a href="bus.html">Washington Charter</a></li>
-					<li><a href="bus.html">Los Angeles Charter</a></li>
-					<li><a href="bus.html">Chicago Charter</a></li>
-					<li><a href="bus.html">Orlando Charter</a></li>
-					<li><a href="bus.html">New Orleans Charter</a></li>
+					<li><a href="#">New York  Charter </a></li>
+					<li><a href="#">Washington Charter</a></li>
+					<li><a href="#">Los Angeles Charter</a></li>
+					<li><a href="#">Chicago Charter</a></li>
+					<li><a href="#">Orlando Charter</a></li>
+					<li><a href="#">New Orleans Charter</a></li>
+					<li><a href="#">Houston Charter</a></li>
+					<li><a href="#">Nashville Charter</a></li>
+					<li><a href="#">Charlotte Charter</a></li>
+					<li><a href="#">Toronto Charter</a></li>
+					<li><a href="#">Washington Charter</a></li>
+					<li><a href="#">Los Angeles Charter</a></li>
+					<li><a href="#">Chicago Charter</a></li>
+					<li><a href="#">Orlando Charter</a></li>
+					<li><a href="#">New Orleans Charter</a></li>
 					<div class="clearfix"></div>
 				</ul>
 		</div>
 		<div class="col-md-6 footer-left wow fadeInRight animated" data-wow-delay=".5s">
-			<h3>Bus Routes</h3>
+			<h3><br></h3>
 				<ul>
-					<li><a href="travels.html">Alabama-California</a></li>
-					<li><a href="travels.html">Alaska-Colorado</a></li>
-					<li><a href="travels.html">Arizona-Delaware</a></li>
-					<li><a href="travels.html">Arkansas-Florida</a></li>
-					<li><a href="travels.html">Kansas-Georgia</a></li>
-					<li><a href="travels.html">Iowa-Hawaii</a></li>
-					<li><a href="travels.html">Indiana-Illinois</a></li>
-					<li><a href="travels.html">Illinois-Florida</a></li>
-					<li><a href="travels.html">Idaho-Indiana</a></li>
-					<li><a href="travels.html">Hawaii-Iowa</a></li>
-					<li><a href="travels.html">Georgia-Kansas</a></li>
-					<li><a href="travels.html">Florida-Arkansas</a></li>
-					<li><a href="travels.html">Delaware-Arizona</a></li>
-					<li><a href="travels.html">Colorado-Alaska</a></li>
-					<li><a href="travels.html">California-Alabama</a></li>
+					<li><a href="#">Alabama-California</a></li>
+					<li><a href="#">Alaska-Colorado</a></li>
+					<li><a href="#">Arizona-Delaware</a></li>
+					<li><a href="#">Arkansas-Florida</a></li>
+					<li><a href="#">Kansas-Georgia</a></li>
+					<li><a href="#">Iowa-Hawaii</a></li>
+					<li><a href="#">Indiana-Illinois</a></li>
+					<li><a href="#">Illinois-Florida</a></li>
+					<li><a href="#">Idaho-Indiana</a></li>
+					<li><a href="#">Hawaii-Iowa</a></li>
+					<li><a href="#">Georgia-Kansas</a></li>
+					<li><a href="#">Florida-Arkansas</a></li>
+					<li><a href="#">Delaware-Arizona</a></li>
+					<li><a href="#">Colorado-Alaska</a></li>
+					<li><a href="#">California-Alabama</a></li>
 					<div class="clearfix"></div>
 				</ul>
 		</div>
@@ -328,7 +309,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
 			</ul>
 		</div>
-		<p class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">© 2016 Green Wheels . All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+		<p class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">www.bookexpressbus.lk<a href="#" target="_blank"></a> </p>
 	</div>
 </div>
 <!--- /copy-right ---->
