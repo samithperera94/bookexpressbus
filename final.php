@@ -51,6 +51,6 @@ if ($result1) {
 }
 
 session_destroy();
-header("location: index.php");
+header("location: index.php?success=1");
 
 ?>

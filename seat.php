@@ -57,7 +57,19 @@
 <body>
 <div class="content">
 
+    <div class="top-header">
+        <div class="container">
+            <ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">
+                <li class="hm"><a href="index.php"><i class="fa fa-home"></i></a></li>
+                <li class="prnt"><a href="javascript:window.print()">Print/SMS Ticket</a></li>
 
+            </ul>
+            <ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s">
+                <li class="tol">Toll Number : 123-4568790</li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
     <div class="container" style="background-color: #34ad00 ; min-height:30px;padding: 15px; width: 80% ; margin: auto; ">
         <center>
         <p style="font-size:larged">   <?php echo"$departure";?> to <?php echo"$arrival";?>|<?php echo"$date";?>|<?php echo"$bus_id";?> </p>

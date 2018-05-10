@@ -5,7 +5,12 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <?php
+
     require ('dbcon.php');
+    if($_POST['startcountry']=="" or $_POST['endcountry'] == "" or $_POST['dateselect']=="" or $_POST['startcountry']=="City not Found" or $_POST['endcountry']=="City not Found" or $_POST['startcountry'] == $_POST['endcountry']){
+        echo "<script type='text/javascript'>alert('check your inputs');</script>";
+        header("location:index.php");
+    }
     session_start();
     $_SESSION['date']=$_POST['dateselect'];
 ?>
@@ -39,21 +44,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <!-- top-header -->
-<div class="top-header">
-	<div class="container">
-		<ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">
-			<li class="hm"><a href="index.php"><i class="fa fa-home"></i></a></li>
-			<li class="prnt"><a href="javascript:window.print()">Print/SMS Ticket</a></li>
-				
-		</ul>
-		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> 
-			<li class="tol">Toll Number : 123-4568790</li>				
-			<li class="sig"><a href="#" data-toggle="modal" data-target="#myModal" >Sign Up</a></li> 
-			<li class="sigi"><a href="#" data-toggle="modal" data-target="#myModal4" >/ Sign In</a></li>
-        </ul>
-		<div class="clearfix"></div>
-	</div>
-</div>
+<!--<div class="top-header">-->
+<!--	<div class="container">-->
+<!--		<ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">-->
+<!--			<li class="hm"><a href="index.php"><i class="fa fa-home"></i></a></li>-->
+<!--			<li class="prnt"><a href="javascript:window.print()">Print/SMS Ticket</a></li>-->
+<!--				-->
+<!--		</ul>-->
+<!--		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> -->
+<!--			<li class="tol">Toll Number : 123-4568790</li>				-->
+<!--			<li class="sig"><a href="#" data-toggle="modal" data-target="#myModal" >Sign Up</a></li> -->
+<!--			<li class="sigi"><a href="#" data-toggle="modal" data-target="#myModal4" >/ Sign In</a></li>-->
+<!--        </ul>-->
+<!--		<div class="clearfix"></div>-->
+<!--	</div>-->
+<!--</div>-->
 <!--- /top-header ---->
 <!--- header ---->
 <div class="header">
@@ -199,14 +204,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="bus-txt1">
 					<h4><a href="#"><?php echo $startTime;?></a></h4>
-					<p>Duration</p>
+
 				</div>
 				<div class="clearfix"></div>
 			</li>
 			<li class="arriv">
 				<div class="bus-txt2">
 					<h4><a href="#"><?php echo $endTime?></a></h4>
-					<p><?php echo $endTime-$startTime?> Hrs</p>
+
 				</div>
 			</li>
 			<li class="seat">
@@ -249,51 +254,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--- /bus-midd ---->
 <!--- footer-top ---->
 <div class="footer-top">
-	<div class="container">
-		<div class="col-md-6 footer-left wow fadeInLeft animated" data-wow-delay=".5s">
-			<h3>Bus Routes</h3>
-				<ul>
-					<li><a href="#">New York  Charter </a></li>
-					<li><a href="#">Washington Charter</a></li>
-					<li><a href="#">Los Angeles Charter</a></li>
-					<li><a href="#">Chicago Charter</a></li>
-					<li><a href="#">Orlando Charter</a></li>
-					<li><a href="#">New Orleans Charter</a></li>
-					<li><a href="#">Houston Charter</a></li>
-					<li><a href="#">Nashville Charter</a></li>
-					<li><a href="#">Charlotte Charter</a></li>
-					<li><a href="#">Toronto Charter</a></li>
-					<li><a href="#">Washington Charter</a></li>
-					<li><a href="#">Los Angeles Charter</a></li>
-					<li><a href="#">Chicago Charter</a></li>
-					<li><a href="#">Orlando Charter</a></li>
-					<li><a href="#">New Orleans Charter</a></li>
-					<div class="clearfix"></div>
-				</ul>
-		</div>
-		<div class="col-md-6 footer-left wow fadeInRight animated" data-wow-delay=".5s">
-			<h3><br></h3>
-				<ul>
-					<li><a href="#">Alabama-California</a></li>
-					<li><a href="#">Alaska-Colorado</a></li>
-					<li><a href="#">Arizona-Delaware</a></li>
-					<li><a href="#">Arkansas-Florida</a></li>
-					<li><a href="#">Kansas-Georgia</a></li>
-					<li><a href="#">Iowa-Hawaii</a></li>
-					<li><a href="#">Indiana-Illinois</a></li>
-					<li><a href="#">Illinois-Florida</a></li>
-					<li><a href="#">Idaho-Indiana</a></li>
-					<li><a href="#">Hawaii-Iowa</a></li>
-					<li><a href="#">Georgia-Kansas</a></li>
-					<li><a href="#">Florida-Arkansas</a></li>
-					<li><a href="#">Delaware-Arizona</a></li>
-					<li><a href="#">Colorado-Alaska</a></li>
-					<li><a href="#">California-Alabama</a></li>
-					<div class="clearfix"></div>
-				</ul>
-		</div>
-		<div class="clearfix"></div>
-	</div>
+    <div class="container">
+
+        <div class="col-md-6 footer-left wow fadeInRight animated" data-wow-delay=".5s">
+
+            <h3>Bus Routes</h3>
+            <ul>
+                <li><a href="#">Pettah-Galle</a></li>
+                <li><a href="#">Pettah-Matara</a></li>
+                <li><a href="#">Maharagama-galle</a></li>
+                <li><a href="#">Maharagama-matara</a></li>
+                <li><a href="#">Maharagama-panadura</a></li>
+                <li><a href="#">Maharagama-kadawatha</a></li>
+                <li><a href="#">nugegoda gampaha</a></li>
+                <li><a href="#">Kaduwela-matara</a></li>
+                <li><a href="#">Kaduwela-Galle</a></li>
+                <li><a href="#">Kaduwela-Panadura</a></li>
+                <li><a href="#">Panadura-Matara</a></li>
+                <li><a href="#">Panadura-Galle</a></li>
+
+                <div class="clearfix"></div>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
 </div>
 <!--- /footer-top ---->
 <!---copy-right ---->

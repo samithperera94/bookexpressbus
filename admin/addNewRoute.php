@@ -77,11 +77,11 @@ require('dbcon.php');
                 </div>
                  <div class="form-group">
                     <label for="start_time">Start Time:</label>
-                    <input type="time" class="form-control" id="start_time" placeholder="Enter start time" name="start_time">
+                    <input type="text" class="form-control" id="start_time" placeholder="HH:MM:SS" name="start_time">
                 </div>
                 <div class="form-group">
                     <label for="end_time">End Time:</label>
-                    <input type="time" class="form-control" id="end_time" placeholder="Enter end time" name="end_time">
+                    <input type="text" class="form-control" id="end_time" placeholder="HH:MM:SS" name="end_time">
                 </div> 
                 <div class="form-group">
                     <label for="end_time">Bus Fair:</label>

@@ -1,4 +1,14 @@
+<?php
 
+$get = (isset($_GET['success'])) ? $_GET['success'] : '';
+if((!empty($get)) && ($get == 1))
+{
+    echo  "<script type='text/javascript'>alert('YOU HAVE BOOKED SUCCESSFULLY')</script>";
+
+}
+
+require ('dbcon.php');
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -54,19 +64,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <!-- top-header -->
-<div class="top-header">
-	<div class="container">
-		<ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">
-			<li class="hm"><a href="index.php"><i class="fa fa-home"></i></a></li>
-			<li class="prnt"><a href="javascript:window.print()">Print/SMS Ticket</a></li>
-				
-		</ul>
-		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> 
-			<li class="tol">Toll Number : 123-4568790</li>				
-
-		<div class="clearfix"></div>
-	</div>
-</div>
+<!--<div class="top-header">-->
+<!--	<div class="container">-->
+<!--		<ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">-->
+<!--			<li class="hm"><a href="index.php"><i class="fa fa-home"></i></a></li>-->
+<!--			<li class="prnt"><a href="javascript:window.print()">Print/SMS Ticket</a></li>-->
+<!---->
+<!--		</ul>-->
+<!--		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s">-->
+<!--			<li class="tol">Toll Number : 123-4568790</li>-->
+<!--        </ul>-->
+<!--		<div class="clearfix"></div>-->
+<!--	</div>-->
+<!--</div>-->
 <!--- /top-header ---->
 <!--- header ---->
 <div class="header">
@@ -106,7 +116,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="bnr-left">
 				<label class="inputLabel">From</label>
 				<div style="">
-			            <input type="text" name="startcountry" id="country" class="form-control" placeholder="Departure station" style="width:90%;padding:10px;">
+			            <input type="text" name="startcountry" id="country" class="form-control" placeholder="Departure station"  required style="width:90%;padding:10px;">
 			    </div>
 
 			    <div id="countryList"></div>
@@ -115,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="bnr-left">
 				<label class="inputLabel">To</label>
 				<div style="">
-			            <input type="text" name="endcountry" id="country2" class="form-control" placeholder="Arrival station" style="width:90%; padding:10px">
+			            <input type="text" name="endcountry" id="country2" class="form-control" placeholder="Arrival station" required style="width:90%; padding:10px">
 			   	</div>
 
 			    <div id="countryList2"></div>
@@ -126,7 +136,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="ban-bottom">
 			<div class="bnr-right">
 				<label class="inputLabel">Date of Journey</label>
-				<input type="date" name="dateselect" style="width:90%" >
+				<input type="date" name="dateselect" required style="width:90%" >
 			</div>
 			<div class="bnr-right">
 				
@@ -154,7 +164,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="#"><i class="fa fa-truck"></i></a>
 			</div>
 			<div class="rou-rgt wow fadeInDown animated" data-wow-delay=".5s">
-				<h3>80000</h3>
+                <?php
+                    $query = "SELECT COUNT(route_id) as routes FROM route";
+                    $result = mysqli_query($conn,$query);
+                    $data = mysqli_fetch_assoc($result);
+
+                ?>
+				<h3><?php echo $data['routes'];?></h3>
 				<p>ROUTES</p>
 			</div>
 				<div class="clearfix"></div>

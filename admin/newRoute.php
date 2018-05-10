@@ -45,7 +45,7 @@
 
                 else{
 
-                     $sql = "INSERT INTO route VALUES('$bus_id','$route_no','$departure','$arrival','$start_time','$end_time','$bus_fair')";
+                     $sql = "INSERT INTO route (bus_id,route_no,departure,arrival,start_time,end_time,bus_fair)VALUES('$bus_id','$route_no','$departure','$arrival','$start_time','$end_time','$bus_fair')";
                     if (mysqli_query($conn, $sql)) 
                         {
                             header('Location:admin.php?success=1');
